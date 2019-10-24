@@ -1,0 +1,16 @@
+*.pyc
+*.egg-info
+__pycache__
+
+*.so
+*.pyd
+
+/build/
+
+/hal/_impl/__init__.py
+/hal/_impl/gensrc
+/hal/_impl/include
+/hal/_impl/lib
+/hal/_impl/pkgcfg.py
+
+/.vscode
