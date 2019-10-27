@@ -1,0 +1,23 @@
+---
+
+extra_includes:
+- "wpiutil_converters.hpp"
+- "frc/smartdashboard/SendableBuilder.h"
+
+# files:
+#   DigitalInput:
+#     extra_includes:
+#     - "frc/smartdashboard/SendableBuilder.h"
+
+classes:
+
+  DigitalInput:
+    methods:
+      InitSendable:
+        # ignore: true
+
+  TimedRobot:
+    methods:
+      GetPeriod:
+      StartCompetition:
+      TimedRobot:

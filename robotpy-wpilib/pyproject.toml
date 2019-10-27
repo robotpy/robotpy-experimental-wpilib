@@ -1,0 +1,210 @@
+[build-system]
+requires = ["robotpy-build", "robotpy-hal", "pyntcore"]
+
+[tool.robotpy-build]
+base_package = "wpilib"
+
+[tool.robotpy-build.wrappers."wpilib._impl"]
+
+name = "wpilibc"
+artname = "wpilibc-cpp"
+baseurl = "https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/wpilibc"
+version = "2019.4.1"
+
+sources = [
+    "wpilib/_impl/main.cpp"
+]
+
+generate = [
+
+    # what do I need for a very basic robot?
+    # .. samplerobot/timedrobot, a motor, joystick, robotbase?
+
+    # { ADXL345_I2C = "frc/ADXL345_I2C.h" },
+    # { ADXL345_SPI = "frc/ADXL345_SPI.h" },
+    # { ADXL362 = "frc/ADXL362.h" },
+    # { ADXRS450_Gyro = "frc/ADXRS450_Gyro.h" },
+    # { AnalogAccelerometer = "frc/AnalogAccelerometer.h" },
+    # { AnalogGyro = "frc/AnalogGyro.h" },
+    # { AnalogInput = "frc/AnalogInput.h" },
+    # { AnalogOutput = "frc/AnalogOutput.h" },
+    # { AnalogPotentiometer = "frc/AnalogPotentiometer.h" },
+    # { AnalogTrigger = "frc/AnalogTrigger.h" },
+    # { AnalogTriggerOutput = "frc/AnalogTriggerOutput.h" },
+    # { AnalogTriggerType = "frc/AnalogTriggerType.h" },
+    # # { Base = "frc/Base.h" },
+    # { BuiltInAccelerometer = "frc/BuiltInAccelerometer.h" },
+    # { CAN = "frc/CAN.h" },
+    # { circular_buffer = "frc/circular_buffer.h" },
+    # { Compressor = "frc/Compressor.h" },
+    # { Controller = "frc/Controller.h" },
+    # { ControllerPower = "frc/ControllerPower.h" },
+    # { CounterBase = "frc/CounterBase.h" },
+    # { Counter = "frc/Counter.h" },
+    # { DigitalGlitchFilter = "frc/DigitalGlitchFilter.h" },
+    # { DigitalInput = "frc/DigitalInput.h" },
+
+    # sendablebuilder incomplete reference
+    # { DigitalOutput = "frc/DigitalOutput.h" },
+    # { DigitalSource = "frc/DigitalSource.h" },
+    # { DMC60 = "frc/DMC60.h" },
+    # { DoubleSolenoid = "frc/DoubleSolenoid.h" },
+    # { DriverStation = "frc/DriverStation.h" },
+    # { Encoder = "frc/Encoder.h" },
+    # { ErrorBase = "frc/ErrorBase.h" },
+
+    # errorbase incomplete reference
+    #{ Error = "frc/Error.h" },
+
+    # { Filesystem = "frc/Filesystem.h" },
+    # { GamepadBase = "frc/GamepadBase.h" },
+    # { GearTooth = "frc/GearTooth.h" },
+    # { GenericHID = "frc/GenericHID.h" },
+    # { GyroBase = "frc/GyroBase.h" },
+    # { I2C = "frc/I2C.h" },
+    # { InterruptableSensorBase = "frc/InterruptableSensorBase.h" },
+    # { IterativeRobotBase = "frc/IterativeRobotBase.h" },
+    # { IterativeRobot = "frc/IterativeRobot.h" },
+    # { Jaguar = "frc/Jaguar.h" },
+    # { JoystickBase = "frc/JoystickBase.h" },
+    # { Joystick = "frc/Joystick.h" },
+    # { MotorSafety = "frc/MotorSafety.h" },
+    # { NidecBrushless = "frc/NidecBrushless.h" },
+    # { Notifier = "frc/Notifier.h" },
+    # { PIDBase = "frc/PIDBase.h" },
+    # { PIDController = "frc/PIDController.h" },
+    # { PIDInterface = "frc/PIDInterface.h" },
+    # { PIDOutput = "frc/PIDOutput.h" },
+    # { PIDSource = "frc/PIDSource.h" },
+    # { PowerDistributionPanel = "frc/PowerDistributionPanel.h" },
+    # { Preferences = "frc/Preferences.h" },
+    # { PWM = "frc/PWM.h" },
+    # { PWMSpeedController = "frc/PWMSpeedController.h" },
+    # { PWMTalonSRX = "frc/PWMTalonSRX.h" },
+    # { PWMVictorSPX = "frc/PWMVictorSPX.h" },
+    # { Relay = "frc/Relay.h" },
+    # { Resource = "frc/Resource.h" },
+    # { RobotBase = "frc/RobotBase.h" },
+    # { RobotController = "frc/RobotController.h" },
+    # { RobotDrive = "frc/RobotDrive.h" },
+    # { RobotState = "frc/RobotState.h" },
+    # { SampleRobot = "frc/SampleRobot.h" },
+    # { SD540 = "frc/SD540.h" },
+    # { SensorUtil = "frc/SensorUtil.h" },
+    # { SerialPort = "frc/SerialPort.h" },
+    # { Servo = "frc/Servo.h" },
+    # { SolenoidBase = "frc/SolenoidBase.h" },
+    # { Solenoid = "frc/Solenoid.h" },
+    # { Spark = "frc/Spark.h" },
+    # { SpeedControllerGroup = "frc/SpeedControllerGroup.h" },
+    # { SpeedController = "frc/SpeedController.h" },
+    # { SPI = "frc/SPI.h" },
+    # { Talon = "frc/Talon.h" },
+    # { Threads = "frc/Threads.h" },
+    # { TimedRobot = "frc/TimedRobot.h" },
+    # { Timer = "frc/Timer.h" },
+    # { Ultrasonic = "frc/Ultrasonic.h" },
+    # { Utility = "frc/Utility.h" },
+    # { Victor = "frc/Victor.h" },
+    # { VictorSP = "frc/VictorSP.h" },
+    # { Watchdog = "frc/Watchdog.h" },
+    # { WPIErrors = "frc/WPIErrors.h" },
+    # # { WPILib = "frc/WPILib.h" },
+    # { XboxController = "frc/XboxController.h" },
+
+    # frc/buttons
+    # { Button = "frc/buttons/Button.h" },
+    # { ButtonScheduler = "frc/buttons/ButtonScheduler.h" },
+    # { CancelButtonScheduler = "frc/buttons/CancelButtonScheduler.h" },
+    # { HeldButtonScheduler = "frc/buttons/HeldButtonScheduler.h" },
+    # { InternalButton = "frc/buttons/InternalButton.h" },
+    # { JoystickButton = "frc/buttons/JoystickButton.h" },
+    # { NetworkButton = "frc/buttons/NetworkButton.h" },
+    # { POVButton = "frc/buttons/POVButton.h" },
+    # { PressedButtonScheduler = "frc/buttons/PressedButtonScheduler.h" },
+    # { ReleasedButtonScheduler = "frc/buttons/ReleasedButtonScheduler.h" },
+    # { ToggleButtonScheduler = "frc/buttons/ToggleButtonScheduler.h" },
+    # { Trigger = "frc/buttons/Trigger.h" },
+
+    # frc/commands
+    # { CommandGroupEntry = "frc/commands/CommandGroupEntry.h" },
+    # { CommandGroup = "frc/commands/CommandGroup.h" },
+    # { Command = "frc/commands/Command.h" },
+    # { ConditionalCommand = "frc/commands/ConditionalCommand.h" },
+    # { InstantCommand = "frc/commands/InstantCommand.h" },
+    # { PIDCommand = "frc/commands/PIDCommand.h" },
+    # { PIDSubsystem = "frc/commands/PIDSubsystem.h" },
+    # { PrintCommand = "frc/commands/PrintCommand.h" },
+    # { Scheduler = "frc/commands/Scheduler.h" },
+    # { StartCommand = "frc/commands/StartCommand.h" },
+    # { Subsystem = "frc/commands/Subsystem.h" },
+    # { TimedCommand = "frc/commands/TimedCommand.h" },
+    # { WaitCommand = "frc/commands/WaitCommand.h" },
+    # { WaitForChildren = "frc/commands/WaitForChildren.h" },
+    # { WaitUntilCommand = "frc/commands/WaitUntilCommand.h" },
+
+    # frc/drive
+    # { DifferentialDrive = "frc/drive/DifferentialDrive.h" },
+    # { KilloughDrive = "frc/drive/KilloughDrive.h" },
+    # { MecanumDrive = "frc/drive/MecanumDrive.h" },
+    # { RobotDriveBase = "frc/drive/RobotDriveBase.h" },
+
+    # { Vector2d = "frc/drive/Vector2d.h" },
+
+    # frc/filters
+    # { Filter = "frc/filters/Filter.h" },
+    # { LinearDigitalFilter = "frc/filters/LinearDigitalFilter.h" },
+
+    # frc/interfaces
+    # { Accelerometer = "frc/interfaces/Accelerometer.h" },
+    # { Gyro = "frc/interfaces/Gyro.h" },
+    # { Potentiometer = "frc/interfaces/Potentiometer.h" },
+
+    # { LiveWindow = "frc/livewindow/LiveWindow.h" },
+    # { LiveWindowSendable = "frc/livewindow/LiveWindowSendable.h" },
+
+    # {  = "frc/.h" },uffleboard
+    # { BuiltInLayouts = "frc/shuffleboard/BuiltInLayouts.h" },
+    # { BuiltInWidgets = "frc/shuffleboard/BuiltInWidgets.h" },
+    # { ComplexWidget = "frc/shuffleboard/ComplexWidget.h" },
+    # { LayoutType = "frc/shuffleboard/LayoutType.h" },
+    # { RecordingController = "frc/shuffleboard/RecordingController.h" },
+    # { SendableCameraWrapper = "frc/shuffleboard/SendableCameraWrapper.h" },
+    # { ShuffleboardComponentBase = "frc/shuffleboard/ShuffleboardComponentBase.h" },
+    # { ShuffleboardComponent = "frc/shuffleboard/ShuffleboardComponent.h" },
+    # { ShuffleboardContainer = "frc/shuffleboard/ShuffleboardContainer.h" },
+    # { ShuffleboardEventImportance = "frc/shuffleboard/ShuffleboardEventImportance.h" },
+    # { Shuffleboard = "frc/shuffleboard/Shuffleboard.h" },
+    # { ShuffleboardInstance = "frc/shuffleboard/ShuffleboardInstance.h" },
+    # { ShuffleboardLayout = "frc/shuffleboard/ShuffleboardLayout.h" },
+    # { ShuffleboardRoot = "frc/shuffleboard/ShuffleboardRoot.h" },
+    # { ShuffleboardTab = "frc/shuffleboard/ShuffleboardTab.h" },
+    # { ShuffleboardValue = "frc/shuffleboard/ShuffleboardValue.h" },
+    # { ShuffleboardWidget = "frc/shuffleboard/ShuffleboardWidget.h" },
+    # { SimpleWidget = "frc/shuffleboard/SimpleWidget.h" },
+    # { WidgetType = "frc/shuffleboard/WidgetType.h" },
+
+    # { NamedSendable = "frc/smartdashboard/NamedSendable.h" },
+    { SendableBase = "frc/smartdashboard/SendableBase.h" },
+    # { SendableBuilder = "frc/smartdashboard/SendableBuilder.h" },
+    # { SendableBuilderImpl = "frc/smartdashboard/SendableBuilderImpl.h" },
+    # { SendableChooserBase = "frc/smartdashboard/SendableChooserBase.h" },
+    # { SendableChooser = "frc/smartdashboard/SendableChooser.h" },
+    { Sendable = "frc/smartdashboard/Sendable.h" },
+    # { SmartDashboard = "frc/smartdashboard/SmartDashboard.h" },
+]
+
+generation_data = "gen/data.yml"
+depends = ["wpiHal", "wpiutil", "ntcore", "cameraserver"]
+
+[tool.robotpy-build.metadata]
+name = "robotpy-wpilib"
+description = "Binary wrapper for FRC WPILib"
+author = "RobotPy Development Team"
+author_email = "robotpy@googlegroups.com"
+url = "https://github.com/robotpy/robotpy-wpilib"
+license = "BSD-3-Clause"
+install_requires = [
+    "robotpy-hal",
+    "pyntcore"
+]
