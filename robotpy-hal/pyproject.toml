@@ -6,7 +6,7 @@ base_package = "hal"
 
 [tool.robotpy-build.wrappers."hal._impl"]
 
-libname = "wpiHal"
+name = "wpiHal"
 artname = "hal-cpp"
 baseurl = "https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/hal"
 version = "2019.4.1"

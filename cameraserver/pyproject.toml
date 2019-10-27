@@ -1,0 +1,51 @@
+[build-system]
+requires = ["robotpy-build"]
+
+[tool.robotpy-build]
+base_package = "cameraserver"
+
+[tool.robotpy-build.wrappers."cameraserver._impl"]
+name = "cameraserver"
+artname = "cameraserver-cpp"
+baseurl = "http://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/cameraserver"
+version = "2019.4.1"
+sources = []
+depends = ["cscore"]
+
+[tool.robotpy-build.wrappers."cameraserver._cscore"]
+
+name = "cscore"
+artname = "cscore-cpp"
+baseurl = "http://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/cscore"
+version = "2019.4.1"
+
+sources = []
+depends = ['wpiutil', 'opencv', 'ntcore']
+
+[tool.robotpy-build.wrappers."cameraserver._opencv"]
+
+name = "opencv"
+libs = [
+    "opencv_core",
+    "opencv_imgproc",
+    "opencv_imgcodecs",
+]
+artname = "opencv-cpp"
+baseurl = "http://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/thirdparty/frc2019/opencv"
+version = "3.4.4-5"
+
+sources = []
+
+[tool.robotpy-build.wrappers."cameraserver._opencv".libexts]
+".dll" = "344.dll"
+".so" = ".so.3.4"
+".dylib" = ".3.4.dylib"
+
+[tool.robotpy-build.metadata]
+name = "cameraserver"
+description = "Hacked up cameraserver stuff for 2019"
+author = "RobotPy Development Team"
+author_email = "robotpy@googlegroups.com"
+url = "https://github.com/robotpy"
+license = "BSD-3-Clause"
+install_requires = []
