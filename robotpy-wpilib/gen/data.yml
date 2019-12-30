@@ -11,13 +11,180 @@ extra_includes:
 
 classes:
 
-  DigitalInput:
+  Accelerometer:
+    shared_ptr: true
     methods:
+      Accelerometer:
+      SetRange:
+      GetX:
+      GetY:
+      GetZ:
+  
+  AnalogAccelerometer:
+    shared_ptr: true
+    methods:
+      AnalogAccelerometer:
+        overloads:
+          int:
+          AnalogInput*:
+            ignore: true
+          std::shared_ptr<AnalogInput>:
+      GetAcceleration:
+      SetSensitivity:
+      SetZero:
+      PIDGet:
+        rename: pidGet
       InitSendable:
-        # ignore: true
-
-  TimedRobot:
+  
+  AnalogInput:
+    shared_ptr: true
     methods:
-      GetPeriod:
-      StartCompetition:
-      TimedRobot:
+      AnalogInput:
+      GetValue:
+      GetAverageValue:
+      GetVoltage:
+      GetAverageVoltage:
+      GetChannel:
+      SetAverageBits:
+      GetAverageBits:
+      SetOversampleBits:
+      GetOversampleBits:
+      GetLSBWeight:
+      GetOffset:
+      IsAccumulatorChannel:
+      InitAccumulator:
+      SetAccumulatorInitialValue:
+      ResetAccumulator:
+      SetAccumulatorCenter:
+      SetAccumulatorDeadband:
+      GetAccumulatorValue:
+      GetAccumulatorCount:
+      GetAccumulatorOutput:
+      SetSampleRate:
+      GetSampleRate:
+      PIDGet:
+        rename: pidGet
+      InitSendable:
+  
+  AnalogOutput:
+    shared_ptr: true
+    methods:
+      AnalogOutput:
+      SetVoltage:
+      GetVoltage:
+      GetChannel:
+      InitSendable:
+  
+  AnalogPotentiometer:
+    shared_ptr: true
+    methods:
+      AnalogPotentiometer:
+        overloads:
+          int, double, double:
+          AnalogInput*, double, double:
+            ignore: true
+          std::shared_ptr<AnalogInput>, double, double:
+      Get:
+      PIDGet:
+      InitSendable:
+
+  # AnalogTrigger:
+  #   shared_ptr: true
+  #   extra_includes:
+  #   - "frc/AnalogInput.h"
+  #   methods:
+  #     AnalogTrigger:
+  #       overloads:
+  #         int:
+  #         frc::AnalogInput*:
+  #           # TODO: need to add keepalive support
+  #           ignore: true
+  #     SetLimitsVoltage:
+  #     SetLimitsRaw:
+  #     SetAveraged:
+  #     SetFiltered:
+  #     GetIndex:
+  #     GetInWindow:
+  #     GetTriggerState:
+  #     CreateOutput:
+  #     InitSendable:
+
+  ErrorBase:
+    shared_ptr: true
+    methods:
+      ErrorBase:
+      GetError:
+        overloads:
+          "":
+          '[const]':
+      ClearError:
+      SetErrnoError:
+      SetImaqError:
+      SetError:
+      SetErrorRange:
+      SetWPIError:
+      CloneError:
+      StatusIsFatal:
+      SetGlobalError:
+      SetGlobalWPIError:
+      GetGlobalError:
+  
+  Gyro:
+    shared_ptr: true
+    methods:
+      Gyro:
+      Calibrate:
+      Reset:
+      GetAngle:
+      GetRate:
+  
+  PIDOutput:
+    shared_ptr: true
+    methods:
+      PIDWrite:
+        rename: pidWrite
+  
+  PIDSource:
+    shared_ptr: true
+    methods:
+      SetPIDSourceType:
+      GetPIDSourceType:
+      PIDGet:
+        rename: pidGet
+  
+  Potentiometer:
+    shared_ptr: true
+    methods:
+      Potentiometer:
+      Get:
+      SetPIDSourceType:
+
+  Sendable:
+    shared_ptr: true
+    methods:
+      Sendable:
+      GetName:
+      SetName:
+        overloads:
+          wpi::Twine&:
+          wpi::Twine&, wpi::Twine&:
+      GetSubsystem:
+      SetSubsystem:
+      InitSendable:
+  
+  SendableBase:
+    shared_ptr: true
+    methods:
+      SendableBase:
+      GetName:
+      SetName:
+        overloads:
+          wpi::Twine&:
+          wpi::Twine&, int:
+          wpi::Twine&, int, int:
+      GetSubsystem:
+      SetSubsystem:
+      AddChild:
+        overloads:
+          std::shared_ptr<Sendable>:
+          void*:

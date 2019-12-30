@@ -24,11 +24,11 @@ generate = [
     # { ADXL345_SPI = "frc/ADXL345_SPI.h" },
     # { ADXL362 = "frc/ADXL362.h" },
     # { ADXRS450_Gyro = "frc/ADXRS450_Gyro.h" },
-    # { AnalogAccelerometer = "frc/AnalogAccelerometer.h" },
+    { AnalogAccelerometer = "frc/AnalogAccelerometer.h" },
     # { AnalogGyro = "frc/AnalogGyro.h" },
-    # { AnalogInput = "frc/AnalogInput.h" },
-    # { AnalogOutput = "frc/AnalogOutput.h" },
-    # { AnalogPotentiometer = "frc/AnalogPotentiometer.h" },
+    { AnalogInput = "frc/AnalogInput.h" },
+    { AnalogOutput = "frc/AnalogOutput.h" },
+    { AnalogPotentiometer = "frc/AnalogPotentiometer.h" },
     # { AnalogTrigger = "frc/AnalogTrigger.h" },
     # { AnalogTriggerOutput = "frc/AnalogTriggerOutput.h" },
     # { AnalogTriggerType = "frc/AnalogTriggerType.h" },
@@ -51,7 +51,7 @@ generate = [
     # { DoubleSolenoid = "frc/DoubleSolenoid.h" },
     # { DriverStation = "frc/DriverStation.h" },
     # { Encoder = "frc/Encoder.h" },
-    # { ErrorBase = "frc/ErrorBase.h" },
+    { ErrorBase = "frc/ErrorBase.h" },
 
     # errorbase incomplete reference
     #{ Error = "frc/Error.h" },
@@ -74,8 +74,8 @@ generate = [
     # { PIDBase = "frc/PIDBase.h" },
     # { PIDController = "frc/PIDController.h" },
     # { PIDInterface = "frc/PIDInterface.h" },
-    # { PIDOutput = "frc/PIDOutput.h" },
-    # { PIDSource = "frc/PIDSource.h" },
+    { PIDOutput = "frc/PIDOutput.h" },
+    { PIDSource = "frc/PIDSource.h" },
     # { PowerDistributionPanel = "frc/PowerDistributionPanel.h" },
     # { Preferences = "frc/Preferences.h" },
     # { PWM = "frc/PWM.h" },
@@ -156,9 +156,9 @@ generate = [
     # { LinearDigitalFilter = "frc/filters/LinearDigitalFilter.h" },
 
     # frc/interfaces
-    # { Accelerometer = "frc/interfaces/Accelerometer.h" },
-    # { Gyro = "frc/interfaces/Gyro.h" },
-    # { Potentiometer = "frc/interfaces/Potentiometer.h" },
+    { Accelerometer = "frc/interfaces/Accelerometer.h" },
+    { Gyro = "frc/interfaces/Gyro.h" },
+    { Potentiometer = "frc/interfaces/Potentiometer.h" },
 
     # { LiveWindow = "frc/livewindow/LiveWindow.h" },
     # { LiveWindowSendable = "frc/livewindow/LiveWindowSendable.h" },
