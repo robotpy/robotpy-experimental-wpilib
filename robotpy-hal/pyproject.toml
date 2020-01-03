@@ -8,8 +8,8 @@ base_package = "hal"
 
 name = "wpiHal"
 artname = "hal-cpp"
-baseurl = "https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/hal"
-version = "2019.4.1"
+baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/hal"
+version = "2020.1.2"
 
 sources = [
     "hal/_impl/hal.cpp"
@@ -17,45 +17,52 @@ sources = [
 
 generate = [
     { Accelerometer = "hal/Accelerometer.h" },
+    { AddressableLED = "hal/AddressableLED.h" },
+    { AddressableLEDTypes = "hal/AddressableLEDTypes.h" },
     { AnalogAccumulator = "hal/AnalogAccumulator.h" },
     { AnalogGyro = "hal/AnalogGyro.h" },
     { AnalogInput = "hal/AnalogInput.h" },
     { AnalogOutput = "hal/AnalogOutput.h" },
     { AnalogTrigger = "hal/AnalogTrigger.h" },
+    { CAN = "hal/CAN.h" },
     { CANAPI = "hal/CANAPI.h" },
     { CANAPITypes = "hal/CANAPITypes.h" },
-    { CAN = "hal/CAN.h" },
     #{ ChipObject = "hal/ChipObject.h" },
     { Compressor = "hal/Compressor.h" },
     { Constants = "hal/Constants.h" },
     { Counter = "hal/Counter.h" },
     { DIO = "hal/DIO.h" },
+    # { DMA = "hal/DMA.h" },
     { DriverStation = "hal/DriverStation.h" },
     { DriverStationTypes = "hal/DriverStationTypes.h" },
+    { DutyCycle = "hal/DutyCycle.h" },
     { Encoder = "hal/Encoder.h" },
     # { Errors = "hal/Errors.h" },
     { Extensions = "hal/Extensions.h" },
     { FRCUsageReporting = "hal/FRCUsageReporting.h" },
-    { HALBase = "hal/HALBase.h" },
     # { HAL = "hal/HAL.h" },
+    { HALBase = "hal/HALBase.h" },
     { I2C = "hal/I2C.h" },
     { I2CTypes = "hal/I2CTypes.h" },
     { Interrupts = "hal/Interrupts.h" },
+    { Main = "hal/Main.h" },
     { Notifier = "hal/Notifier.h" },
     { PDP = "hal/PDP.h" },
+    { PWM = "hal/PWM.h" },
     { Ports = "hal/Ports.h" },
     { Power = "hal/Power.h" },
-    { PWM = "hal/PWM.h" },
     { Relay = "hal/Relay.h" },
-    { SerialPort = "hal/SerialPort.h" },
-    { Solenoid = "hal/Solenoid.h" },
     { SPI = "hal/SPI.h" },
     { SPITypes = "hal/SPITypes.h" },
+    { SerialPort = "hal/SerialPort.h" },
+    { SimDevice = "hal/SimDevice.h" },
+    { Solenoid = "hal/Solenoid.h" },
     { Threads = "hal/Threads.h" },
-    #{ Types = "hal/Types.h" },
+    # { Types = "hal/Types.h" },
+    # { Value = "hal/Value.h" },
 ]
 
-generation_data = "gen/data.yml"
+generation_data = "gen"
 depends = ["wpiutil"]
 
 [tool.robotpy-build.metadata]
