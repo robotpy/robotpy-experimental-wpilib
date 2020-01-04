@@ -5,6 +5,7 @@ strip_prefixes:
 
 enums:
   HAL_Counter_Mode:
+    rename: CounterMode
     value_prefix: HAL_Counter
 functions:
   HAL_InitializeCounter:

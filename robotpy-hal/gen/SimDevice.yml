@@ -91,7 +91,7 @@ classes:
       CreateDouble:
       CreateEnum:
         overloads:
-          char*, bool, std::initializer_list<const char>, int32_t:
+          char*, bool, std::initializer_list<const char *>, int32_t:
             ignore: true
-          char*, bool, wpi::ArrayRef<const char>, int32_t:
+          char*, bool, wpi::ArrayRef<const char *>, int32_t:
       CreateBoolean:
