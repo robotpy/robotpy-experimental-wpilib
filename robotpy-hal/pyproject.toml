@@ -60,6 +60,8 @@ generate = [
     { Threads = "hal/Threads.h" },
     # { Types = "hal/Types.h" },
     # { Value = "hal/Value.h" },
+
+    { HandlesInternal = "hal/handles/HandlesInternal.h" },
 ]
 
 generation_data = "gen"
