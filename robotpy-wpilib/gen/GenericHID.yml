@@ -1,0 +1,37 @@
+---
+
+extra_includes:
+- frc/DriverStation.h
+
+classes:
+  GenericHID:
+    shared_ptr: true
+    enums:
+      RumbleType:
+      HIDType:
+      JoystickHand:
+    methods:
+      GenericHID:
+      GetX:
+        param_override:
+          hand:
+            default: frc::GenericHID::JoystickHand::kRightHand
+      GetY:
+        param_override:
+          hand:
+            default: frc::GenericHID::JoystickHand::kRightHand
+      GetRawButton:
+      GetRawButtonPressed:
+      GetRawButtonReleased:
+      GetRawAxis:
+      GetPOV:
+      GetAxisCount:
+      GetPOVCount:
+      GetButtonCount:
+      GetType:
+      GetName:
+      GetAxisType:
+      GetPort:
+      SetOutput:
+      SetOutputs:
+      SetRumble:

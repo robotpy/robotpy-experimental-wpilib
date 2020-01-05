@@ -1,0 +1,22 @@
+---
+
+extra_includes:
+- frc/SpeedController.h
+
+classes:
+  KilloughDrive:
+    shared_ptr: true
+    attributes:
+      kDefaultLeftMotorAngle:
+      kDefaultRightMotorAngle:
+      kDefaultBackMotorAngle:
+    methods:
+      KilloughDrive:
+        overloads:
+          frc::SpeedController&, frc::SpeedController&, frc::SpeedController&:
+          frc::SpeedController&, frc::SpeedController&, frc::SpeedController&, double, double, double:
+      DriveCartesian:
+      DrivePolar:
+      StopMotor:
+      GetDescription:
+      InitSendable:

@@ -1,0 +1,31 @@
+---
+
+classes:
+  SolenoidBase:
+    shared_ptr: true
+    attributes:
+      m_maxModules:
+      m_maxPorts:
+      m_moduleNumber:
+    methods:
+      GetAll:
+        overloads:
+          int:
+          '[const]':
+      GetPCMSolenoidBlackList:
+        overloads:
+          int:
+          '[const]':
+      GetPCMSolenoidVoltageStickyFault:
+        overloads:
+          int:
+          '[const]':
+      GetPCMSolenoidVoltageFault:
+        overloads:
+          int:
+          '[const]':
+      ClearAllPCMStickyFaults:
+        overloads:
+          int:
+          "":
+      SolenoidBase:

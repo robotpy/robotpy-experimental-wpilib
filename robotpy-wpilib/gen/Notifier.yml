@@ -1,0 +1,24 @@
+---
+
+classes:
+  Notifier:
+    shared_ptr: true
+    methods:
+      Notifier:
+        overloads:
+          std::function<void ( )>:
+          Callable&&, Arg&&, Args ...&&:
+            ignore: true
+      SetName:
+      SetHandler:
+      StartSingle:
+        overloads:
+          double:
+            ignore: true
+          units::second_t:
+      StartPeriodic:
+        overloads:
+          double:
+            ignore: true
+          units::second_t:
+      Stop:

@@ -1,0 +1,15 @@
+---
+
+classes:
+  TimedRobot:
+    shared_ptr: true
+    attributes:
+      kDefaultPeriod:
+    methods:
+      StartCompetition:
+      EndCompetition:
+      GetPeriod:
+      TimedRobot:
+        overloads:
+          double:
+          units::second_t:

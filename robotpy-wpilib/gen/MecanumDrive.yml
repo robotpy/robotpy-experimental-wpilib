@@ -1,0 +1,17 @@
+---
+
+extra_includes:
+- frc/SpeedController.h
+
+classes:
+  MecanumDrive:
+    shared_ptr: true
+    methods:
+      MecanumDrive:
+      DriveCartesian:
+      DrivePolar:
+      IsRightSideInverted:
+      SetRightSideInverted:
+      StopMotor:
+      GetDescription:
+      InitSendable:

@@ -1,0 +1,23 @@
+---
+
+extra_includes:
+- frc/SpeedController.h
+
+classes:
+  DifferentialDrive:
+    shared_ptr: true
+    attributes:
+      kDefaultQuickStopThreshold:
+      kDefaultQuickStopAlpha:
+    methods:
+      DifferentialDrive:
+      ArcadeDrive:
+      CurvatureDrive:
+      TankDrive:
+      SetQuickStopThreshold:
+      SetQuickStopAlpha:
+      IsRightSideInverted:
+      SetRightSideInverted:
+      StopMotor:
+      GetDescription:
+      InitSendable:

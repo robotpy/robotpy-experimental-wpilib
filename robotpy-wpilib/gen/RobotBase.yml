@@ -1,0 +1,33 @@
+---
+
+extra_includes:
+- frc/DriverStation.h
+
+functions:
+  # TODO
+  RunHALInitialization:
+    ignore: true
+  RunRobot:
+    ignore: true
+  StartRobot:
+    ignore: true
+classes:
+  RobotBase:
+    shared_ptr: true
+    attributes:
+      m_ds:
+        rename: ds
+      m_threadId:
+    methods:
+      IsEnabled:
+      IsDisabled:
+      IsAutonomous:
+      IsOperatorControl:
+      IsTest:
+      IsNewDataAvailable:
+      GetThreadId:
+      StartCompetition:
+      EndCompetition:
+      IsReal:
+      IsSimulation:
+      RobotBase:

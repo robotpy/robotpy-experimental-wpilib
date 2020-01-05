@@ -1,0 +1,23 @@
+---
+
+classes:
+  IterativeRobotBase:
+    shared_ptr: true
+    attributes:
+      m_period:
+    methods:
+      RobotInit:
+      DisabledInit:
+      AutonomousInit:
+      TeleopInit:
+      TestInit:
+      RobotPeriodic:
+      DisabledPeriodic:
+      AutonomousPeriodic:
+      TeleopPeriodic:
+      TestPeriodic:
+      IterativeRobotBase:
+        overloads:
+          double:
+          units::second_t:
+      LoopFunc:

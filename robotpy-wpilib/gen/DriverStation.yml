@@ -1,0 +1,58 @@
+---
+
+classes:
+  DriverStation:
+    shared_ptr: true
+    attributes:
+      kJoystickPorts:
+    enums:
+      Alliance:
+      MatchType:
+    methods:
+      GetInstance:
+      ReportError:
+        overloads:
+          wpi::Twine&:
+          bool, int, wpi::Twine&, wpi::Twine&, wpi::Twine&:
+      ReportWarning:
+      GetStickButton:
+      GetStickButtonPressed:
+      GetStickButtonReleased:
+      GetStickAxis:
+      GetStickPOV:
+      GetStickButtons:
+      GetStickAxisCount:
+      GetStickPOVCount:
+      GetStickButtonCount:
+      GetJoystickIsXbox:
+      GetJoystickType:
+      GetJoystickName:
+      GetJoystickAxisType:
+      IsEnabled:
+      IsDisabled:
+      IsEStopped:
+      IsAutonomous:
+      IsOperatorControl:
+      IsTest:
+      IsDSAttached:
+      IsNewControlData:
+      IsFMSAttached:
+      GetGameSpecificMessage:
+      GetEventName:
+      GetMatchType:
+      GetMatchNumber:
+      GetReplayNumber:
+      GetAlliance:
+      GetLocation:
+      WaitForData:
+        overloads:
+          "":
+          double:
+      GetMatchTime:
+      GetBatteryVoltage:
+      InDisabled:
+      InAutonomous:
+      InOperatorControl:
+      InTest:
+      WakeupWaitForData:
+      GetData:

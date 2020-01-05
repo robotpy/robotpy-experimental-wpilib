@@ -1,0 +1,43 @@
+---
+
+extra_includes:
+- frc/PIDOutput.h
+
+classes:
+  PIDController:
+    shared_ptr: true
+    methods:
+      PIDController:
+        overloads:
+          double, double, double, PIDSource*, frc::PIDOutput*, double:
+          double, double, double, double, PIDSource*, frc::PIDOutput*, double:
+          double, double, double, PIDSource&, frc::PIDOutput&, double:
+          double, double, double, double, PIDSource&, frc::PIDOutput&, double:
+      Enable:
+      Disable:
+      SetEnabled:
+      IsEnabled:
+      Reset:
+      InitSendable:
+      SetPID:
+      SetP:
+      SetI:
+      SetD:
+      GetP:
+      GetI:
+      GetD:
+      GetPeriod:
+      SetSetpoint:
+      GetSetpoint:
+      AtSetpoint:
+      EnableContinuousInput:
+      DisableContinuousInput:
+      SetIntegratorRange:
+      SetTolerance:
+      GetPositionError:
+      GetVelocityError:
+      Calculate:
+        overloads:
+          double:
+          double, double:
+      GetContinuousError:

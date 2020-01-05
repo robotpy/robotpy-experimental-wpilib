@@ -1,0 +1,17 @@
+---
+
+classes:
+  AddressableLED:
+    shared_ptr: true
+    methods:
+      AddressableLED:
+      SetLength:
+      SetData:
+        overloads:
+          wpi::ArrayRef<LEDData>:
+          std::initializer_list<LEDData>:
+            ignore: true
+      SetBitTiming:
+      SetSyncTime:
+      Start:
+      Stop:

@@ -1,0 +1,27 @@
+---
+
+classes:
+  Preferences:
+    shared_ptr: false
+    nodelete: true
+    methods:
+      GetInstance:
+        return_value_policy: reference
+      GetKeys:
+      GetString:
+      GetInt:
+      GetDouble:
+      GetFloat:
+      GetBoolean:
+      GetLong:
+      PutString:
+      PutInt:
+      PutDouble:
+      PutFloat:
+      PutBoolean:
+      PutLong:
+      ContainsKey:
+      Remove:
+      RemoveAll:
+      Preferences:
+        ignore: true

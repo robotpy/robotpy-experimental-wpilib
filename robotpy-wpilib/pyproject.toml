@@ -8,194 +8,257 @@ base_package = "wpilib"
 
 name = "wpilibc"
 artname = "wpilibc-cpp"
-baseurl = "https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/wpilibc"
-version = "2019.4.1"
+baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibc"
+version = "2020.1.2"
 
 sources = [
     "wpilib/_impl/main.cpp"
 ]
 
+generation_data = "gen"
+depends = ["wpiHal", "wpiutil", "ntcore"]
+
+pp_defines = [
+    "DYNAMIC_CAMERA_SERVER 1"
+]
+
 generate = [
+    # { WPILibVersion = "WPILibVersion.h" },
 
-    # what do I need for a very basic robot?
-    # .. samplerobot/timedrobot, a motor, joystick, robotbase?
-
-    # { ADXL345_I2C = "frc/ADXL345_I2C.h" },
-    # { ADXL345_SPI = "frc/ADXL345_SPI.h" },
-    # { ADXL362 = "frc/ADXL362.h" },
-    # { ADXRS450_Gyro = "frc/ADXRS450_Gyro.h" },
+    # frc
+    { ADXL345_I2C = "frc/ADXL345_I2C.h" },
+    { ADXL345_SPI = "frc/ADXL345_SPI.h" },
+    { ADXL362 = "frc/ADXL362.h" },
+    { ADXRS450_Gyro = "frc/ADXRS450_Gyro.h" },
+    # need to fix embedded class issues
+    # { AddressableLED = "frc/AddressableLED.h" },
     { AnalogAccelerometer = "frc/AnalogAccelerometer.h" },
-    # { AnalogGyro = "frc/AnalogGyro.h" },
+    { AnalogEncoder = "frc/AnalogEncoder.h" },
+    { AnalogGyro = "frc/AnalogGyro.h" },
     { AnalogInput = "frc/AnalogInput.h" },
     { AnalogOutput = "frc/AnalogOutput.h" },
     { AnalogPotentiometer = "frc/AnalogPotentiometer.h" },
-    # { AnalogTrigger = "frc/AnalogTrigger.h" },
-    # { AnalogTriggerOutput = "frc/AnalogTriggerOutput.h" },
-    # { AnalogTriggerType = "frc/AnalogTriggerType.h" },
-    # # { Base = "frc/Base.h" },
-    # { BuiltInAccelerometer = "frc/BuiltInAccelerometer.h" },
-    # { CAN = "frc/CAN.h" },
-    # { circular_buffer = "frc/circular_buffer.h" },
-    # { Compressor = "frc/Compressor.h" },
+    { AnalogTrigger = "frc/AnalogTrigger.h" },
+    { AnalogTriggerOutput = "frc/AnalogTriggerOutput.h" },
+    { AnalogTriggerType = "frc/AnalogTriggerType.h" },
+    # Base.h not needed
+    { BuiltInAccelerometer = "frc/BuiltInAccelerometer.h" },
+    { CAN = "frc/CAN.h" },
+    { Compressor = "frc/Compressor.h" },
+    # deprecated
     # { Controller = "frc/Controller.h" },
-    # { ControllerPower = "frc/ControllerPower.h" },
-    # { CounterBase = "frc/CounterBase.h" },
-    # { Counter = "frc/Counter.h" },
-    # { DigitalGlitchFilter = "frc/DigitalGlitchFilter.h" },
-    # { DigitalInput = "frc/DigitalInput.h" },
+    { Counter = "frc/Counter.h" },
+    { CounterBase = "frc/CounterBase.h" },
 
-    # sendablebuilder incomplete reference
-    # { DigitalOutput = "frc/DigitalOutput.h" },
-    # { DigitalSource = "frc/DigitalSource.h" },
-    # { DMC60 = "frc/DMC60.h" },
-    # { DoubleSolenoid = "frc/DoubleSolenoid.h" },
-    # { DriverStation = "frc/DriverStation.h" },
-    # { Encoder = "frc/Encoder.h" },
+    # Needs HAL object support, not sure if this is a good idea for python
+    # { DMA = "frc/DMA.h" },
+    # { DMASample = "frc/DMASample.h" },
+
+    { DMC60 = "frc/DMC60.h" },
+    { DigitalGlitchFilter = "frc/DigitalGlitchFilter.h" },
+    { DigitalInput = "frc/DigitalInput.h" },
+    { DigitalOutput = "frc/DigitalOutput.h" },
+    { DigitalSource = "frc/DigitalSource.h" },
+    { DoubleSolenoid = "frc/DoubleSolenoid.h" },
+    { DriverStation = "frc/DriverStation.h" },
+    { DutyCycle = "frc/DutyCycle.h" },
+    { DutyCycleEncoder = "frc/DutyCycleEncoder.h" },
+    { Encoder = "frc/Encoder.h" },
+    { Error = "frc/Error.h" },
     { ErrorBase = "frc/ErrorBase.h" },
-
-    # errorbase incomplete reference
-    #{ Error = "frc/Error.h" },
-
-    # { Filesystem = "frc/Filesystem.h" },
-    # { GamepadBase = "frc/GamepadBase.h" },
+    { Filesystem = "frc/Filesystem.h" },
+    # deprecated
     # { GearTooth = "frc/GearTooth.h" },
-    # { GenericHID = "frc/GenericHID.h" },
-    # { GyroBase = "frc/GyroBase.h" },
+    { GenericHID = "frc/GenericHID.h" },
+    { GyroBase = "frc/GyroBase.h" },
     # { I2C = "frc/I2C.h" },
-    # { InterruptableSensorBase = "frc/InterruptableSensorBase.h" },
-    # { IterativeRobotBase = "frc/IterativeRobotBase.h" },
+    { InterruptableSensorBase = "frc/InterruptableSensorBase.h" },
     # { IterativeRobot = "frc/IterativeRobot.h" },
-    # { Jaguar = "frc/Jaguar.h" },
-    # { JoystickBase = "frc/JoystickBase.h" },
-    # { Joystick = "frc/Joystick.h" },
-    # { MotorSafety = "frc/MotorSafety.h" },
-    # { NidecBrushless = "frc/NidecBrushless.h" },
-    # { Notifier = "frc/Notifier.h" },
+    # { IterativeRobotBase = "frc/IterativeRobotBase.h" },
+    { Jaguar = "frc/Jaguar.h" },
+    { Joystick = "frc/Joystick.h" },
+    # { LinearFilter = "frc/LinearFilter.h" },
+    # { MedianFilter = "frc/MedianFilter.h" },
+    { MotorSafety = "frc/MotorSafety.h" },
+    { NidecBrushless = "frc/NidecBrushless.h" },
+    { Notifier = "frc/Notifier.h" },
+    # deprecated
     # { PIDBase = "frc/PIDBase.h" },
+    # deprecated
     # { PIDController = "frc/PIDController.h" },
+    # deprecated
     # { PIDInterface = "frc/PIDInterface.h" },
     { PIDOutput = "frc/PIDOutput.h" },
     { PIDSource = "frc/PIDSource.h" },
-    # { PowerDistributionPanel = "frc/PowerDistributionPanel.h" },
-    # { Preferences = "frc/Preferences.h" },
-    # { PWM = "frc/PWM.h" },
-    # { PWMSpeedController = "frc/PWMSpeedController.h" },
-    # { PWMTalonSRX = "frc/PWMTalonSRX.h" },
-    # { PWMVictorSPX = "frc/PWMVictorSPX.h" },
-    # { Relay = "frc/Relay.h" },
+    { PWM = "frc/PWM.h" },
+    { PWMSparkMax = "frc/PWMSparkMax.h" },
+    { PWMSpeedController = "frc/PWMSpeedController.h" },
+    { PWMTalonFX = "frc/PWMTalonFX.h" },
+    { PWMTalonSRX = "frc/PWMTalonSRX.h" },
+    { PWMVenom = "frc/PWMVenom.h" },
+    { PWMVictorSPX = "frc/PWMVictorSPX.h" },
+    { PowerDistributionPanel = "frc/PowerDistributionPanel.h" },
+    { Preferences = "frc/Preferences.h" },
+    { Relay = "frc/Relay.h" },
     # { Resource = "frc/Resource.h" },
+    # TODO: weirdness
     # { RobotBase = "frc/RobotBase.h" },
-    # { RobotController = "frc/RobotController.h" },
+    { RobotController = "frc/RobotController.h" },
+    # deprecated
     # { RobotDrive = "frc/RobotDrive.h" },
-    # { RobotState = "frc/RobotState.h" },
-    # { SampleRobot = "frc/SampleRobot.h" },
-    # { SD540 = "frc/SD540.h" },
-    # { SensorUtil = "frc/SensorUtil.h" },
-    # { SerialPort = "frc/SerialPort.h" },
-    # { Servo = "frc/Servo.h" },
-    # { SolenoidBase = "frc/SolenoidBase.h" },
-    # { Solenoid = "frc/Solenoid.h" },
-    # { Spark = "frc/Spark.h" },
-    # { SpeedControllerGroup = "frc/SpeedControllerGroup.h" },
-    # { SpeedController = "frc/SpeedController.h" },
+    { RobotState = "frc/RobotState.h" },
+    { SD540 = "frc/SD540.h" },
+
+    # TODO: buffer bugs
     # { SPI = "frc/SPI.h" },
-    # { Talon = "frc/Talon.h" },
-    # { Threads = "frc/Threads.h" },
+    { SensorUtil = "frc/SensorUtil.h" },
+    { SerialPort = "frc/SerialPort.h" },
+    { Servo = "frc/Servo.h" },
+    # { SlewRateLimiter = "frc/SlewRateLimiter.h" },
+    { Solenoid = "frc/Solenoid.h" },
+    { SolenoidBase = "frc/SolenoidBase.h" },
+    { Spark = "frc/Spark.h" },
+    { SpeedController = "frc/SpeedController.h" },
+
+    # need a custom implementation
+    # { SpeedControllerGroup = "frc/SpeedControllerGroup.h" },
+    { Talon = "frc/Talon.h" },
+    { Threads = "frc/Threads.h" },
     # { TimedRobot = "frc/TimedRobot.h" },
+
+    # non-units version
     # { Timer = "frc/Timer.h" },
-    # { Ultrasonic = "frc/Ultrasonic.h" },
+
+    { Ultrasonic = "frc/Ultrasonic.h" },
+
+    # Not needed for python
     # { Utility = "frc/Utility.h" },
-    # { Victor = "frc/Victor.h" },
-    # { VictorSP = "frc/VictorSP.h" },
-    # { Watchdog = "frc/Watchdog.h" },
-    # { WPIErrors = "frc/WPIErrors.h" },
-    # # { WPILib = "frc/WPILib.h" },
-    # { XboxController = "frc/XboxController.h" },
 
-    # frc/buttons
-    # { Button = "frc/buttons/Button.h" },
-    # { ButtonScheduler = "frc/buttons/ButtonScheduler.h" },
-    # { CancelButtonScheduler = "frc/buttons/CancelButtonScheduler.h" },
-    # { HeldButtonScheduler = "frc/buttons/HeldButtonScheduler.h" },
-    # { InternalButton = "frc/buttons/InternalButton.h" },
-    # { JoystickButton = "frc/buttons/JoystickButton.h" },
-    # { NetworkButton = "frc/buttons/NetworkButton.h" },
-    # { POVButton = "frc/buttons/POVButton.h" },
-    # { PressedButtonScheduler = "frc/buttons/PressedButtonScheduler.h" },
-    # { ReleasedButtonScheduler = "frc/buttons/ReleasedButtonScheduler.h" },
-    # { ToggleButtonScheduler = "frc/buttons/ToggleButtonScheduler.h" },
-    # { Trigger = "frc/buttons/Trigger.h" },
+    { Victor = "frc/Victor.h" },
+    { VictorSP = "frc/VictorSP.h" },
+    { WPIErrors = "frc/WPIErrors.h" },
+    # dont use this
+    # { WPILib = "frc/WPILib.h" },
+    { Watchdog = "frc/Watchdog.h" },
+    { XboxController = "frc/XboxController.h" },
 
-    # frc/commands
-    # { CommandGroupEntry = "frc/commands/CommandGroupEntry.h" },
-    # { CommandGroup = "frc/commands/CommandGroup.h" },
-    # { Command = "frc/commands/Command.h" },
-    # { ConditionalCommand = "frc/commands/ConditionalCommand.h" },
-    # { InstantCommand = "frc/commands/InstantCommand.h" },
-    # { PIDCommand = "frc/commands/PIDCommand.h" },
-    # { PIDSubsystem = "frc/commands/PIDSubsystem.h" },
-    # { PrintCommand = "frc/commands/PrintCommand.h" },
-    # { Scheduler = "frc/commands/Scheduler.h" },
-    # { StartCommand = "frc/commands/StartCommand.h" },
-    # { Subsystem = "frc/commands/Subsystem.h" },
-    # { TimedCommand = "frc/commands/TimedCommand.h" },
-    # { WaitCommand = "frc/commands/WaitCommand.h" },
-    # { WaitForChildren = "frc/commands/WaitForChildren.h" },
-    # { WaitUntilCommand = "frc/commands/WaitUntilCommand.h" },
+    # frc/controller
+    # { ArmFeedforward = "frc/controller/ArmFeedforward.h" },
+    # { ElevatorFeedforward = "frc/controller/ElevatorFeedforward.h" },
+    # { PIDController = "frc/controller/PIDController.h" },
+    # { ProfiledPIDController = "frc/controller/ProfiledPIDController.h" },
+    # { RamseteController = "frc/controller/RamseteController.h" },
+    # { SimpleMotorFeedforward = "frc/controller/SimpleMotorFeedforward.h" },
 
     # frc/drive
     # { DifferentialDrive = "frc/drive/DifferentialDrive.h" },
     # { KilloughDrive = "frc/drive/KilloughDrive.h" },
     # { MecanumDrive = "frc/drive/MecanumDrive.h" },
     # { RobotDriveBase = "frc/drive/RobotDriveBase.h" },
-
     # { Vector2d = "frc/drive/Vector2d.h" },
 
     # frc/filters
     # { Filter = "frc/filters/Filter.h" },
     # { LinearDigitalFilter = "frc/filters/LinearDigitalFilter.h" },
 
+    # frc/geometry
+    # { Pose2d = "frc/geometry/Pose2d.h" },
+    # { Rotation2d = "frc/geometry/Rotation2d.h" },
+    # { Transform2d = "frc/geometry/Transform2d.h" },
+    # { Translation2d = "frc/geometry/Translation2d.h" },
+    # { Twist2d = "frc/geometry/Twist2d.h" },
+
     # frc/interfaces
     { Accelerometer = "frc/interfaces/Accelerometer.h" },
     { Gyro = "frc/interfaces/Gyro.h" },
     { Potentiometer = "frc/interfaces/Potentiometer.h" },
 
-    # { LiveWindow = "frc/livewindow/LiveWindow.h" },
-    # { LiveWindowSendable = "frc/livewindow/LiveWindowSendable.h" },
+    # frc/kinematics
+    # { ChassisSpeeds = "frc/kinematics/ChassisSpeeds.h" },
+    # { DifferentialDriveKinematics = "frc/kinematics/DifferentialDriveKinematics.h" },
+    # { DifferentialDriveOdometry = "frc/kinematics/DifferentialDriveOdometry.h" },
+    # { DifferentialDriveWheelSpeeds = "frc/kinematics/DifferentialDriveWheelSpeeds.h" },
+    # { MecanumDriveKinematics = "frc/kinematics/MecanumDriveKinematics.h" },
+    # { MecanumDriveOdometry = "frc/kinematics/MecanumDriveOdometry.h" },
+    # { MecanumDriveWheelSpeeds = "frc/kinematics/MecanumDriveWheelSpeeds.h" },
+    # { SwerveDriveKinematics = "frc/kinematics/SwerveDriveKinematics.h" },
+    # { SwerveDriveOdometry = "frc/kinematics/SwerveDriveOdometry.h" },
+    # { SwerveModuleState = "frc/kinematics/SwerveModuleState.h" },
 
-    # {  = "frc/.h" },uffleboard
-    # { BuiltInLayouts = "frc/shuffleboard/BuiltInLayouts.h" },
-    # { BuiltInWidgets = "frc/shuffleboard/BuiltInWidgets.h" },
-    # { ComplexWidget = "frc/shuffleboard/ComplexWidget.h" },
-    # { LayoutType = "frc/shuffleboard/LayoutType.h" },
+    # frc/livewindow
+    { LiveWindow = "frc/livewindow/LiveWindow.h" },
+
+    # frc/shuffleboard
+    # -> there's template madness here, do it later
+
+    # # { BuiltInLayouts = "frc/shuffleboard/BuiltInLayouts.h" },
+    # # { BuiltInWidgets = "frc/shuffleboard/BuiltInWidgets.h" },
+    # # { ComplexWidget = "frc/shuffleboard/ComplexWidget.h" },
+    # # { LayoutType = "frc/shuffleboard/LayoutType.h" },
     # { RecordingController = "frc/shuffleboard/RecordingController.h" },
-    # { SendableCameraWrapper = "frc/shuffleboard/SendableCameraWrapper.h" },
-    # { ShuffleboardComponentBase = "frc/shuffleboard/ShuffleboardComponentBase.h" },
-    # { ShuffleboardComponent = "frc/shuffleboard/ShuffleboardComponent.h" },
-    # { ShuffleboardContainer = "frc/shuffleboard/ShuffleboardContainer.h" },
+    # # # No embedded cscore
+    # # # { SendableCameraWrapper = "frc/shuffleboard/SendableCameraWrapper.h" },
+    # # { Shuffleboard = "frc/shuffleboard/Shuffleboard.h" },
+    # # { ShuffleboardComponent = "frc/shuffleboard/ShuffleboardComponent.h" },
+    # # { ShuffleboardComponentBase = "frc/shuffleboard/ShuffleboardComponentBase.h" },
+    # # { ShuffleboardContainer = "frc/shuffleboard/ShuffleboardContainer.h" },
     # { ShuffleboardEventImportance = "frc/shuffleboard/ShuffleboardEventImportance.h" },
-    # { Shuffleboard = "frc/shuffleboard/Shuffleboard.h" },
     # { ShuffleboardInstance = "frc/shuffleboard/ShuffleboardInstance.h" },
-    # { ShuffleboardLayout = "frc/shuffleboard/ShuffleboardLayout.h" },
+    # # { ShuffleboardLayout = "frc/shuffleboard/ShuffleboardLayout.h" },
     # { ShuffleboardRoot = "frc/shuffleboard/ShuffleboardRoot.h" },
     # { ShuffleboardTab = "frc/shuffleboard/ShuffleboardTab.h" },
-    # { ShuffleboardValue = "frc/shuffleboard/ShuffleboardValue.h" },
-    # { ShuffleboardWidget = "frc/shuffleboard/ShuffleboardWidget.h" },
-    # { SimpleWidget = "frc/shuffleboard/SimpleWidget.h" },
-    # { WidgetType = "frc/shuffleboard/WidgetType.h" },
+    # # { ShuffleboardValue = "frc/shuffleboard/ShuffleboardValue.h" },
+    # # { ShuffleboardWidget = "frc/shuffleboard/ShuffleboardWidget.h" },
+    # # { SimpleWidget = "frc/shuffleboard/SimpleWidget.h" },
+    # # { SuppliedValueWidget = "frc/shuffleboard/SuppliedValueWidget.h" },
+    # # { WidgetType = "frc/shuffleboard/WidgetType.h" },
 
-    # { NamedSendable = "frc/smartdashboard/NamedSendable.h" },
-    { SendableBase = "frc/smartdashboard/SendableBase.h" },
-    # { SendableBuilder = "frc/smartdashboard/SendableBuilder.h" },
-    # { SendableBuilderImpl = "frc/smartdashboard/SendableBuilderImpl.h" },
-    # { SendableChooserBase = "frc/smartdashboard/SendableChooserBase.h" },
-    # { SendableChooser = "frc/smartdashboard/SendableChooser.h" },
+    # frc/smartdashboard
+    # { ListenerExecutor = "frc/smartdashboard/ListenerExecutor.h" },
     { Sendable = "frc/smartdashboard/Sendable.h" },
-    # { SmartDashboard = "frc/smartdashboard/SmartDashboard.h" },
-]
+    { SendableBase = "frc/smartdashboard/SendableBase.h" },
+    { SendableBuilder = "frc/smartdashboard/SendableBuilder.h" },
+    { SendableBuilderImpl = "frc/smartdashboard/SendableBuilderImpl.h" },
 
-generation_data = "gen/data.yml"
-depends = ["wpiHal", "wpiutil", "ntcore", "cameraserver"]
+    # TODO, needs manual wrapping
+    # { SendableChooser = "frc/smartdashboard/SendableChooser.h" },
+    # { SendableChooserBase = "frc/smartdashboard/SendableChooserBase.h" },
+
+    # # This is just a template
+    # # { SendableHelper = "frc/smartdashboard/SendableHelper.h" },
+    { SendableRegistry = "frc/smartdashboard/SendableRegistry.h" },
+    { SmartDashboard = "frc/smartdashboard/SmartDashboard.h" },
+
+    # frc/spline
+    # { CubicHermiteSpline = "frc/spline/CubicHermiteSpline.h" },
+    # { QuinticHermiteSpline = "frc/spline/QuinticHermiteSpline.h" },
+    # { Spline = "frc/spline/Spline.h" },
+    # { SplineHelper = "frc/spline/SplineHelper.h" },
+    # { SplineParameterizer = "frc/spline/SplineParameterizer.h" },
+
+    # frc/trajectory
+    # { Trajectory = "frc/trajectory/Trajectory.h" },
+    # { TrajectoryConfig = "frc/trajectory/TrajectoryConfig.h" },
+    # { TrajectoryGenerator = "frc/trajectory/TrajectoryGenerator.h" },
+    # { TrajectoryParameterizer = "frc/trajectory/TrajectoryParameterizer.h" },
+    # { TrajectoryUtil = "frc/trajectory/TrajectoryUtil.h" },
+    # { TrapezoidProfile = "frc/trajectory/TrapezoidProfile.h" },
+
+    # frc/trajectory/constraint
+    # { CentripetalAccelerationConstraint = "frc/trajectory/constraint/CentripetalAccelerationConstraint.h" },
+    # { DifferentialDriveKinematicsConstraint = "frc/trajectory/constraint/DifferentialDriveKinematicsConstraint.h" },
+    # { DifferentialDriveVoltageConstraint = "frc/trajectory/constraint/DifferentialDriveVoltageConstraint.h" },
+    # { MecanumDriveKinematicsConstraint = "frc/trajectory/constraint/MecanumDriveKinematicsConstraint.h" },
+    # { SwerveDriveKinematicsConstraint = "frc/trajectory/constraint/SwerveDriveKinematicsConstraint.h" },
+    # { TrajectoryConstraint = "frc/trajectory/constraint/TrajectoryConstraint.h" },
+
+    # frc/util
+    { Color = "frc/util/Color.h" },
+    { Color8Bit = "frc/util/Color8Bit.h" },
+
+    # frc2
+    { Timer = "frc2/Timer.h" },
+]
 
 [tool.robotpy-build.metadata]
 name = "robotpy-wpilib"
