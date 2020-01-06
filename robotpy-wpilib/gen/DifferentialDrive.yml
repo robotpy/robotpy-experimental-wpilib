@@ -1,11 +1,14 @@
 ---
 
 extra_includes:
+- frc/smartdashboard/SendableBuilder.h
 - frc/SpeedController.h
 
 classes:
   DifferentialDrive:
     shared_ptr: true
+    ignored_bases:
+    - SendableHelper<DifferentialDrive>
     attributes:
       kDefaultQuickStopThreshold:
       kDefaultQuickStopAlpha:

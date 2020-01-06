@@ -77,7 +77,9 @@ generate = [
     # { IterativeRobotBase = "frc/IterativeRobotBase.h" },
     { Jaguar = "frc/Jaguar.h" },
     { Joystick = "frc/Joystick.h" },
+    # template required
     # { LinearFilter = "frc/LinearFilter.h" },
+    # template required
     # { MedianFilter = "frc/MedianFilter.h" },
     { MotorSafety = "frc/MotorSafety.h" },
     { NidecBrushless = "frc/NidecBrushless.h" },
@@ -151,11 +153,11 @@ generate = [
     # { SimpleMotorFeedforward = "frc/controller/SimpleMotorFeedforward.h" },
 
     # frc/drive
-    # { DifferentialDrive = "frc/drive/DifferentialDrive.h" },
-    # { KilloughDrive = "frc/drive/KilloughDrive.h" },
-    # { MecanumDrive = "frc/drive/MecanumDrive.h" },
-    # { RobotDriveBase = "frc/drive/RobotDriveBase.h" },
-    # { Vector2d = "frc/drive/Vector2d.h" },
+    { DifferentialDrive = "frc/drive/DifferentialDrive.h" },
+    { KilloughDrive = "frc/drive/KilloughDrive.h" },
+    { MecanumDrive = "frc/drive/MecanumDrive.h" },
+    { RobotDriveBase = "frc/drive/RobotDriveBase.h" },
+    { Vector2d = "frc/drive/Vector2d.h" },
 
     # frc/filters
     # { Filter = "frc/filters/Filter.h" },
