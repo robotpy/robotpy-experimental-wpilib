@@ -1,0 +1,66 @@
+[build-system]
+requires = ["robotpy-build", "robotpy-wpilib"]
+
+[tool.robotpy-build]
+base_package = "commands"
+
+# TODO: make this a namespace package?
+[tool.robotpy-build.wrappers."commands._impl"]
+
+name = "commands"
+artname = "wpilibOldCommands-cpp"
+baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibOldCommands"
+version = "2020.1.2"
+
+depends = ["wpilibc"]
+libs = ["wpilibOldCommands"]
+
+sources = [
+    "commands/_impl/commands.cpp"
+]
+
+generate = [
+    # frc/buttons
+    { Button = "frc/buttons/Button.h" },
+    { ButtonScheduler = "frc/buttons/ButtonScheduler.h" },
+    { CancelButtonScheduler = "frc/buttons/CancelButtonScheduler.h" },
+    { HeldButtonScheduler = "frc/buttons/HeldButtonScheduler.h" },
+    { InternalButton = "frc/buttons/InternalButton.h" },
+    { JoystickButton = "frc/buttons/JoystickButton.h" },
+    { NetworkButton = "frc/buttons/NetworkButton.h" },
+    { POVButton = "frc/buttons/POVButton.h" },
+    { PressedButtonScheduler = "frc/buttons/PressedButtonScheduler.h" },
+    { ReleasedButtonScheduler = "frc/buttons/ReleasedButtonScheduler.h" },
+    { ToggleButtonScheduler = "frc/buttons/ToggleButtonScheduler.h" },
+    { Trigger = "frc/buttons/Trigger.h" },
+
+    # frc/commands
+    { Command = "frc/commands/Command.h" },
+    { CommandGroup = "frc/commands/CommandGroup.h" },
+    { CommandGroupEntry = "frc/commands/CommandGroupEntry.h" },
+    { ConditionalCommand = "frc/commands/ConditionalCommand.h" },
+    { InstantCommand = "frc/commands/InstantCommand.h" },
+    { PIDCommand = "frc/commands/PIDCommand.h" },
+    { PIDSubsystem = "frc/commands/PIDSubsystem.h" },
+    { PrintCommand = "frc/commands/PrintCommand.h" },
+    { Scheduler = "frc/commands/Scheduler.h" },
+    { StartCommand = "frc/commands/StartCommand.h" },
+    { Subsystem = "frc/commands/Subsystem.h" },
+    { TimedCommand = "frc/commands/TimedCommand.h" },
+    { WaitCommand = "frc/commands/WaitCommand.h" },
+    { WaitForChildren = "frc/commands/WaitForChildren.h" },
+    { WaitUntilCommand = "frc/commands/WaitUntilCommand.h" },
+]
+
+generation_data = "gen"
+
+[tool.robotpy-build.metadata]
+name = "robotpy-commands"
+description = "WPILib command framework"
+author = "RobotPy Development Team"
+author_email = "robotpy@googlegroups.com"
+url = "https://github.com/robotpy/robotpy-commands"
+license = "BSD-3-Clause"
+install_requires = [
+    "robotpy-wpilib"
+]
