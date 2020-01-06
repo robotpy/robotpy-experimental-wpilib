@@ -14,6 +14,8 @@ classes:
     nodelete: true
     force_no_trampoline: true
     ignored_bases:
+    - ErrorBase
+    - Sendable
     - SendableHelper<Scheduler>
     methods:
       GetInstance:
