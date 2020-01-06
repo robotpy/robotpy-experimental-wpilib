@@ -1,7 +1,11 @@
 ---
 
+extra_includes:
+- frc/smartdashboard/SendableBuilder.h
+
 functions:
   ReportProfiledPIDController:
+    ignore: true
 classes:
   ProfiledPIDController:
     shared_ptr: true

@@ -1,24 +1,18 @@
 ---
 
 extra_includes:
-- frc/PIDOutput.h
+- frc/smartdashboard/SendableBuilder.h
 
 classes:
   PIDController:
     shared_ptr: true
+    ignored_bases:
+    - frc::SendableHelper<PIDController>
     methods:
       PIDController:
-        overloads:
-          double, double, double, PIDSource*, frc::PIDOutput*, double:
-          double, double, double, double, PIDSource*, frc::PIDOutput*, double:
-          double, double, double, PIDSource&, frc::PIDOutput&, double:
-          double, double, double, double, PIDSource&, frc::PIDOutput&, double:
-      Enable:
-      Disable:
-      SetEnabled:
-      IsEnabled:
-      Reset:
-      InitSendable:
+        param_override:
+          period:
+            default: 20_ms
       SetPID:
       SetP:
       SetI:
@@ -40,4 +34,6 @@ classes:
         overloads:
           double:
           double, double:
+      Reset:
+      InitSendable:
       GetContinuousError:

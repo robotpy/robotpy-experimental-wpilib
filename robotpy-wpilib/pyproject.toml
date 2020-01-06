@@ -146,10 +146,13 @@ generate = [
 
     # frc/controller
     # { ArmFeedforward = "frc/controller/ArmFeedforward.h" },
+    # requires template
     # { ElevatorFeedforward = "frc/controller/ElevatorFeedforward.h" },
-    # { PIDController = "frc/controller/PIDController.h" },
+    { PIDController = "frc/controller/PIDController.h" },
+    # requires template
     # { ProfiledPIDController = "frc/controller/ProfiledPIDController.h" },
-    # { RamseteController = "frc/controller/RamseteController.h" },
+    { RamseteController = "frc/controller/RamseteController.h" },
+    # requires template
     # { SimpleMotorFeedforward = "frc/controller/SimpleMotorFeedforward.h" },
 
     # frc/drive
@@ -159,7 +162,7 @@ generate = [
     { RobotDriveBase = "frc/drive/RobotDriveBase.h" },
     { Vector2d = "frc/drive/Vector2d.h" },
 
-    # frc/filters
+    # frc/filters (deprecated)
     # { Filter = "frc/filters/Filter.h" },
     # { LinearDigitalFilter = "frc/filters/LinearDigitalFilter.h" },
 
@@ -216,6 +219,7 @@ generate = [
     # # { WidgetType = "frc/shuffleboard/WidgetType.h" },
 
     # frc/smartdashboard
+    # internal detail
     # { ListenerExecutor = "frc/smartdashboard/ListenerExecutor.h" },
     { Sendable = "frc/smartdashboard/Sendable.h" },
     { SendableBase = "frc/smartdashboard/SendableBase.h" },
