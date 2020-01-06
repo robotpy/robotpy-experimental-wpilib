@@ -4,6 +4,10 @@ classes:
   SmartDashboard:
     nodelete: true
     force_no_trampoline: true
+    ignored_bases:
+    - ErrorBase
+    - Sendable
+    - SendableHelper<SmartDashboard>
     methods:
       init:
       ContainsKey:

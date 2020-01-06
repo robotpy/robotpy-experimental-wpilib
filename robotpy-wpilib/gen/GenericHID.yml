@@ -10,6 +10,7 @@ classes:
       RumbleType:
       HIDType:
       JoystickHand:
+        rename: Hand
     methods:
       GenericHID:
       GetX:

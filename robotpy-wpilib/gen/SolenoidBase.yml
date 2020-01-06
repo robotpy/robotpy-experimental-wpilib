@@ -11,21 +11,26 @@ classes:
       GetAll:
         overloads:
           int:
+            rename: getAllByModule
           '[const]':
       GetPCMSolenoidBlackList:
         overloads:
           int:
+            rename: getPCMSolenoidBlackListByModule
           '[const]':
       GetPCMSolenoidVoltageStickyFault:
         overloads:
           int:
+            rename: getPCMSolenoidVoltageStickyFaultByModule
           '[const]':
       GetPCMSolenoidVoltageFault:
         overloads:
           int:
+            rename: getPCMSolenoidVoltageFaultByModule
           '[const]':
       ClearAllPCMStickyFaults:
         overloads:
           int:
+            rename: clearAllPCMStickyFaultsByModule
           "":
       SolenoidBase:
