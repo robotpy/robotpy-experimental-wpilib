@@ -1,0 +1,78 @@
+[build-system]
+requires = ["robotpy-build", "robotpy-wpilib"]
+
+[tool.robotpy-build]
+base_package = "commands2"
+
+# TODO: make this a namespace package?
+[tool.robotpy-build.wrappers."commands2._impl"]
+
+name = "commands2"
+artname = "wpilibNewCommands-cpp"
+baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibNewCommands"
+version = "2020.1.2"
+
+depends = ["wpilibc"]
+libs = ["wpilibNewCommands"]
+
+sources = [
+    "commands2/_impl/commands2.cpp"
+]
+
+generate = [
+    # frc2/command
+    { Command = "frc2/command/Command.h" },
+    # { CommandBase = "frc2/command/CommandBase.h" },
+    # { CommandGroupBase = "frc2/command/CommandGroupBase.h" },
+    # { CommandHelper = "frc2/command/CommandHelper.h" },
+    # { CommandScheduler = "frc2/command/CommandScheduler.h" },
+    # { CommandState = "frc2/command/CommandState.h" },
+    # { ConditionalCommand = "frc2/command/ConditionalCommand.h" },
+    # { FunctionalCommand = "frc2/command/FunctionalCommand.h" },
+    # { InstantCommand = "frc2/command/InstantCommand.h" },
+    # { MecanumControllerCommand = "frc2/command/MecanumControllerCommand.h" },
+    # { NotifierCommand = "frc2/command/NotifierCommand.h" },
+    # { PIDCommand = "frc2/command/PIDCommand.h" },
+    # { PIDSubsystem = "frc2/command/PIDSubsystem.h" },
+    # { ParallelCommandGroup = "frc2/command/ParallelCommandGroup.h" },
+    # { ParallelDeadlineGroup = "frc2/command/ParallelDeadlineGroup.h" },
+    # { ParallelRaceGroup = "frc2/command/ParallelRaceGroup.h" },
+    # { PerpetualCommand = "frc2/command/PerpetualCommand.h" },
+    # { PrintCommand = "frc2/command/PrintCommand.h" },
+    # { ProfiledPIDCommand = "frc2/command/ProfiledPIDCommand.h" },
+    # { ProfiledPIDSubsystem = "frc2/command/ProfiledPIDSubsystem.h" },
+    # { ProxyScheduleCommand = "frc2/command/ProxyScheduleCommand.h" },
+    # { RamseteCommand = "frc2/command/RamseteCommand.h" },
+    # { RunCommand = "frc2/command/RunCommand.h" },
+    # { ScheduleCommand = "frc2/command/ScheduleCommand.h" },
+    # { SelectCommand = "frc2/command/SelectCommand.h" },
+    # { SequentialCommandGroup = "frc2/command/SequentialCommandGroup.h" },
+    # { SetUtilities = "frc2/command/SetUtilities.h" },
+    # { StartEndCommand = "frc2/command/StartEndCommand.h" },
+    # { Subsystem = "frc2/command/Subsystem.h" },
+    # { SubsystemBase = "frc2/command/SubsystemBase.h" },
+    # { SwerveControllerCommand = "frc2/command/SwerveControllerCommand.h" },
+    # { TrapezoidProfileCommand = "frc2/command/TrapezoidProfileCommand.h" },
+    # { TrapezoidProfileSubsystem = "frc2/command/TrapezoidProfileSubsystem.h" },
+    # { WaitCommand = "frc2/command/WaitCommand.h" },
+    # { WaitUntilCommand = "frc2/command/WaitUntilCommand.h" },
+
+    # frc2/command/button
+    # { Button = "frc2/command/button/Button.h" },
+    # { JoystickButton = "frc2/command/button/JoystickButton.h" },
+    # { POVButton = "frc2/command/button/POVButton.h" },
+    # { Trigger = "frc2/command/button/Trigger.h" },
+]
+
+generation_data = "gen"
+
+[tool.robotpy-build.metadata]
+name = "robotpy-commands2"
+description = "WPILib command framework"
+author = "RobotPy Development Team"
+author_email = "robotpy@googlegroups.com"
+url = "https://github.com/robotpy/robotpy-commands2"
+license = "BSD-3-Clause"
+install_requires = [
+    "robotpy-wpilib"
+]
