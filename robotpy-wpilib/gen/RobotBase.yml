@@ -13,11 +13,12 @@ functions:
     ignore: true
 classes:
   RobotBase:
-    shared_ptr: true
+    nodelete: true
     attributes:
       m_ds:
         rename: ds
       m_threadId:
+        ignore: true
     methods:
       IsEnabled:
       IsDisabled:

@@ -36,3 +36,9 @@ classes:
       GetAcceleration:
       GetAccelerations:
       InitSendable:
+  ADXL345_SPI::AllAxes:
+    shared_ptr: false
+    attributes:
+      XAxis:
+      YAxis:
+      ZAxis:

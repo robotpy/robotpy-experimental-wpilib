@@ -39,3 +39,10 @@ classes:
       GetAcceleration:
       GetAccelerations:
       InitSendable:
+    
+  ADXL345_I2C::AllAxes:
+    shared_ptr: false
+    attributes:
+      XAxis:
+      YAxis:
+      ZAxis:
