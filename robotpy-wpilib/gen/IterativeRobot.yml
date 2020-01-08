@@ -2,7 +2,7 @@
 
 classes:
   IterativeRobot:
-    shared_ptr: true
+    shared_ptr: false
     methods:
       IterativeRobot:
       StartCompetition:

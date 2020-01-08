@@ -17,6 +17,7 @@ classes:
     attributes:
       m_ds:
         rename: ds
+        access: readonly
       m_threadId:
         ignore: true
     methods:
@@ -32,3 +33,5 @@ classes:
       IsReal:
       IsSimulation:
       RobotBase:
+        # ends up being a memory leak because nodelete
+        ignore: true

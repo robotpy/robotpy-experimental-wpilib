@@ -2,7 +2,7 @@
 
 classes:
   IterativeRobotBase:
-    shared_ptr: true
+    nodelete: true
     attributes:
       m_period:
     methods:
@@ -19,5 +19,8 @@ classes:
       IterativeRobotBase:
         overloads:
           double:
+            ignore: true
           units::second_t:
+            # ends up being a memory leak because nodelete
+            ignore: true
       LoopFunc:

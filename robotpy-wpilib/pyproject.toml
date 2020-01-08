@@ -73,8 +73,8 @@ generate = [
     { GyroBase = "frc/GyroBase.h" },
     # { I2C = "frc/I2C.h" },
     { InterruptableSensorBase = "frc/InterruptableSensorBase.h" },
-    # { IterativeRobot = "frc/IterativeRobot.h" },
-    # { IterativeRobotBase = "frc/IterativeRobotBase.h" },
+    { IterativeRobot = "frc/IterativeRobot.h" },
+    { IterativeRobotBase = "frc/IterativeRobotBase.h" },
     { Jaguar = "frc/Jaguar.h" },
     { Joystick = "frc/Joystick.h" },
     # template required
@@ -104,7 +104,7 @@ generate = [
     { Relay = "frc/Relay.h" },
     # { Resource = "frc/Resource.h" },
     # TODO: weirdness
-    # { RobotBase = "frc/RobotBase.h" },
+    { RobotBase = "frc/RobotBase.h" },
     { RobotController = "frc/RobotController.h" },
     # deprecated
     # { RobotDrive = "frc/RobotDrive.h" },
@@ -126,7 +126,7 @@ generate = [
     # { SpeedControllerGroup = "frc/SpeedControllerGroup.h" },
     { Talon = "frc/Talon.h" },
     { Threads = "frc/Threads.h" },
-    # { TimedRobot = "frc/TimedRobot.h" },
+    { TimedRobot = "frc/TimedRobot.h" },
 
     # non-units version
     # { Timer = "frc/Timer.h" },
