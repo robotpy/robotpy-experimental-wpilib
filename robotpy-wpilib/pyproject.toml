@@ -12,7 +12,8 @@ baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibc"
 version = "2020.1.2"
 
 sources = [
-    "wpilib/_impl/main.cpp"
+    "wpilib/_impl/main.cpp",
+    "wpilib/_impl/_run.cpp",
 ]
 
 generation_data = "gen"
