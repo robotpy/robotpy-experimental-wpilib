@@ -13,7 +13,7 @@ baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/halsim"
 version = "2020.1.2"
 
 depends = ["wpilibc"]
-libs = ["halsim_gui"]
+dlopenlibs = ["halsim_gui"]
 
 
 [tool.robotpy-build.metadata]
