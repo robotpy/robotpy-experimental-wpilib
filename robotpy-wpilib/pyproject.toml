@@ -14,7 +14,10 @@ version = "2020.1.2"
 sources = [
     "wpilib/_impl/main.cpp",
     "wpilib/_impl/_run.cpp",
+    "wpilib/_impl/src/rpy/SpeedControllerGroup.cpp"
 ]
+
+extra_includes = ["wpilib/_impl/src"]
 
 generation_data = "gen"
 depends = ["wpiHal", "wpiutil", "ntcore"]
@@ -122,9 +125,7 @@ generate = [
     { SolenoidBase = "frc/SolenoidBase.h" },
     { Spark = "frc/Spark.h" },
     { SpeedController = "frc/SpeedController.h" },
-
-    # need a custom implementation
-    # { SpeedControllerGroup = "frc/SpeedControllerGroup.h" },
+    { SpeedControllerGroup = "rpy/SpeedControllerGroup.h" },    
     { Talon = "frc/Talon.h" },
     { Threads = "frc/Threads.h" },
     { TimedRobot = "frc/TimedRobot.h" },
