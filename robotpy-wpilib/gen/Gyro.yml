@@ -3,6 +3,7 @@
 classes:
   Gyro:
     shared_ptr: true
+    subpackage: interfaces
     methods:
       Gyro:
       Calibrate:

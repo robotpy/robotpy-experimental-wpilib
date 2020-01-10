@@ -3,6 +3,7 @@
 classes:
   Vector2d:
     shared_ptr: true
+    subpackage: drive
     attributes:
       x:
       y:

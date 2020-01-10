@@ -3,6 +3,7 @@
 classes:
   Potentiometer:
     shared_ptr: true
+    subpackage: interfaces
     methods:
       Potentiometer:
       Get:

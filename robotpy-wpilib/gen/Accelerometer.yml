@@ -3,6 +3,7 @@
 classes:
   Accelerometer:
     shared_ptr: true
+    subpackage: interfaces
     enums:
       Range:
     methods:
