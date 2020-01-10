@@ -1,5 +1,5 @@
 [build-system]
-requires = ["robotpy-build", "robotpy-wpilib"]
+requires = ["robotpy-build", "robotpy-wpilib", "robotpy-wpiutil"]
 
 [tool.robotpy-build]
 base_package = "commands"
@@ -12,7 +12,7 @@ artname = "wpilibOldCommands-cpp"
 baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibOldCommands"
 version = "2020.1.2"
 
-depends = ["wpilibc"]
+depends = ["wpilibc", "wpiutil"]
 libs = ["wpilibOldCommands"]
 
 sources = [
