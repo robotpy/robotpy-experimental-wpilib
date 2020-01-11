@@ -2,6 +2,6 @@
 
 #include <rpygen_wrapper.hpp>
 
-PYBIND11_MODULE(wpiHal, m) {
+RPYBUILD_PYBIND11_MODULE(m) {
     initWrapper(m);
 }

@@ -4,15 +4,20 @@ requires = ["robotpy-build", "robotpy-wpiutil"]
 [tool.robotpy-build]
 base_package = "hal"
 
-[tool.robotpy-build.wrappers."hal._impl"]
 
-name = "wpiHal"
-artname = "hal-cpp"
-baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/hal"
+[tool.robotpy-build.wrappers."hal".maven_lib_download]
+artifact_id = "hal-cpp"
+group_id = "edu.wpi.first.hal"
+repo_url = "https://frcmaven.wpi.edu/artifactory/release"
 version = "2020.1.2"
 
+libs = ["wpiHal"]
+
+[tool.robotpy-build.wrappers."hal"]
+
+name = "wpiHal"
 sources = [
-    "hal/_impl/hal.cpp"
+    "hal/src/hal.cpp"
 ]
 
 generate = [
