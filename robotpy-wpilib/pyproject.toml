@@ -4,23 +4,31 @@ requires = ["robotpy-build", "robotpy-hal", "pyntcore"]
 [tool.robotpy-build]
 base_package = "wpilib"
 
-[tool.robotpy-build.wrappers."wpilib._impl"]
-
-name = "wpilibc"
-artname = "wpilibc-cpp"
-baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibc"
+[tool.robotpy-build.wrappers."wpilib._impl".maven_lib_download]
+artifact_id = "wpilibc-cpp"
+group_id = "edu.wpi.first.wpilibc"
+repo_url = "https://frcmaven.wpi.edu/artifactory/release"
 version = "2020.1.2"
 
+libs = ["wpilibc"]
+
+[tool.robotpy-build.wrappers."wpilib._impl"]
+name = "wpilibc"
+
+[tool.robotpy-build.wrappers."wpilib"]
+name = "wpilib_core"
+extension = "_wpilib"
+
 sources = [
-    "wpilib/_impl/main.cpp",
-    "wpilib/_impl/_run.cpp",
-    "wpilib/_impl/src/rpy/SpeedControllerGroup.cpp"
+    "wpilib/src/main.cpp",
+    "wpilib/src/_run.cpp",
+    "wpilib/src/rpy/SpeedControllerGroup.cpp"
 ]
 
-extra_includes = ["wpilib/_impl/src"]
+extra_includes = ["wpilib/src"]
 
 generation_data = "gen"
-depends = ["wpiHal", "wpiutil", "ntcore"]
+depends = ["wpiHal", "wpiutil", "ntcore", "wpilibc", "wpilibc_interfaces"]
 
 pp_defines = [
     "DYNAMIC_CAMERA_SERVER 1"
@@ -52,7 +60,6 @@ generate = [
     # deprecated
     # { Controller = "frc/Controller.h" },
     { Counter = "frc/Counter.h" },
-    { CounterBase = "frc/CounterBase.h" },
 
     # Needs HAL object support, not sure if this is a good idea for python
     # { DMA = "frc/DMA.h" },
@@ -73,7 +80,7 @@ generate = [
     { Filesystem = "frc/Filesystem.h" },
     # deprecated
     # { GearTooth = "frc/GearTooth.h" },
-    { GenericHID = "frc/GenericHID.h" },
+    
     { GyroBase = "frc/GyroBase.h" },
     # { I2C = "frc/I2C.h" },
     { InterruptableSensorBase = "frc/InterruptableSensorBase.h" },
@@ -94,8 +101,7 @@ generate = [
     # { PIDController = "frc/PIDController.h" },
     # deprecated
     # { PIDInterface = "frc/PIDInterface.h" },
-    { PIDOutput = "frc/PIDOutput.h" },
-    { PIDSource = "frc/PIDSource.h" },
+    
     { PWM = "frc/PWM.h" },
     { PWMSparkMax = "frc/PWMSparkMax.h" },
     { PWMSpeedController = "frc/PWMSpeedController.h" },
@@ -124,7 +130,7 @@ generate = [
     { Solenoid = "frc/Solenoid.h" },
     { SolenoidBase = "frc/SolenoidBase.h" },
     { Spark = "frc/Spark.h" },
-    { SpeedController = "frc/SpeedController.h" },
+    
     { SpeedControllerGroup = "rpy/SpeedControllerGroup.h" },    
     { Talon = "frc/Talon.h" },
     { Threads = "frc/Threads.h" },
@@ -157,12 +163,7 @@ generate = [
     # requires template
     # { SimpleMotorFeedforward = "frc/controller/SimpleMotorFeedforward.h" },
 
-    # frc/drive
-    { DifferentialDrive = "frc/drive/DifferentialDrive.h" },
-    { KilloughDrive = "frc/drive/KilloughDrive.h" },
-    { MecanumDrive = "frc/drive/MecanumDrive.h" },
-    { RobotDriveBase = "frc/drive/RobotDriveBase.h" },
-    { Vector2d = "frc/drive/Vector2d.h" },
+    
 
     # frc/filters (deprecated)
     # { Filter = "frc/filters/Filter.h" },
@@ -175,10 +176,7 @@ generate = [
     # { Translation2d = "frc/geometry/Translation2d.h" },
     # { Twist2d = "frc/geometry/Twist2d.h" },
 
-    # frc/interfaces
-    { Accelerometer = "frc/interfaces/Accelerometer.h" },
-    { Gyro = "frc/interfaces/Gyro.h" },
-    { Potentiometer = "frc/interfaces/Potentiometer.h" },
+    
 
     # frc/kinematics
     # { ChassisSpeeds = "frc/kinematics/ChassisSpeeds.h" },
@@ -266,6 +264,46 @@ generate = [
 
     # frc2
     { Timer = "frc2/Timer.h" },
+]
+
+[tool.robotpy-build.wrappers."wpilib.drive"]
+
+name = "wpilibc_drive"
+extension = "_drive"
+sources = ["wpilib/drive/drive.cpp"]
+depends = [
+    "wpilib_core", "wpilibc_interfaces", "wpilibc",
+    "wpiHal", "wpiutil", "ntcore"
+]
+generation_data = "gen"
+generate = [
+    # frc/drive
+    { DifferentialDrive = "frc/drive/DifferentialDrive.h" },
+    { KilloughDrive = "frc/drive/KilloughDrive.h" },
+    { MecanumDrive = "frc/drive/MecanumDrive.h" },
+    { RobotDriveBase = "frc/drive/RobotDriveBase.h" },
+    { Vector2d = "frc/drive/Vector2d.h" },
+]
+
+[tool.robotpy-build.wrappers."wpilib.interfaces"]
+
+name = "wpilibc_interfaces"
+extension = "_interfaces"
+sources = ["wpilib/interfaces/interfaces.cpp"]
+depends = ["wpilibc", "wpiHal", "wpiutil", "ntcore"]
+generation_data = "gen"
+generate = [
+
+    { CounterBase = "frc/CounterBase.h" },
+    { GenericHID = "frc/GenericHID.h" },
+    { PIDOutput = "frc/PIDOutput.h" },
+    { PIDSource = "frc/PIDSource.h" },
+    { SpeedController = "frc/SpeedController.h" },
+
+    # frc/interfaces
+    { Accelerometer = "frc/interfaces/Accelerometer.h" },
+    { Gyro = "frc/interfaces/Gyro.h" },
+    { Potentiometer = "frc/interfaces/Potentiometer.h" },
 ]
 
 [tool.robotpy-build.metadata]

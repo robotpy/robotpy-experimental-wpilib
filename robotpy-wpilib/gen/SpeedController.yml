@@ -3,7 +3,6 @@
 classes:
   SpeedController:
     shared_ptr: true
-    subpackage: interfaces
     methods:
       Set:
       SetVoltage:

@@ -4,16 +4,20 @@ requires = ["robotpy-build", "robotpy-wpilib"]
 [tool.robotpy-build]
 base_package = "halsim"
 
-# TODO: make this a namespace package?
-[tool.robotpy-build.wrappers."halsim._impl"]
 
-name = "halsim_gui"
-artname = "halsim_gui"
-baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/halsim"
+[tool.robotpy-build.wrappers."halsim".maven_lib_download]
+artifact_id = "halsim_gui"
+group_id = "edu.wpi.first.halsim"
+repo_url = "https://frcmaven.wpi.edu/artifactory/release"
 version = "2020.1.2"
 
-depends = ["wpilibc"]
 dlopenlibs = ["halsim_gui"]
+
+# TODO: make this a namespace package?
+[tool.robotpy-build.wrappers."halsim"]
+name = "halsim_gui"
+depends = ["wpilibc"]
+
 
 
 [tool.robotpy-build.metadata]

@@ -6,6 +6,8 @@
 # - halsim_gui
 
 import wpilib
+from wpilib.drive import DifferentialDrive
+print(DifferentialDrive)
 
 class MyRobot(wpilib.TimedRobot):
     def robotInit(self):
@@ -13,6 +15,8 @@ class MyRobot(wpilib.TimedRobot):
         self.input = wpilib.DigitalInput(1)
         self.timer = wpilib.Timer()
         self.timer.start()
+
+        # self.drive = DifferentialDrive()
     
     def teleopInit(self):
         print("teleopInit?")
@@ -30,4 +34,4 @@ if __name__ == '__main__':
     r = MyRobot()
 
     # nor will this
-    wpilib._impl.wpilibc._run(None, r.startCompetition, r.endCompetition)
+    wpilib._wpilib._run(None, r.startCompetition, r.endCompetition)

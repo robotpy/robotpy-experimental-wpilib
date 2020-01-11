@@ -7,7 +7,7 @@ def enable_gui():
     hal.initialize(500, 0)
     hal.setShowExtensionsNotFoundMessages(True)
 
-    root = join(abspath(dirname(__file__)), '_impl', 'lib')
+    root = join(abspath(dirname(__file__)), 'lib')
     ext = join(root, os.listdir(root)[0])
     hal.loadOneExtension(ext)
 

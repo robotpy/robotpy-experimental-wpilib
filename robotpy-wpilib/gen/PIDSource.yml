@@ -5,7 +5,6 @@ enums:
 classes:
   PIDSource:
     shared_ptr: true
-    subpackage: interfaces
     attributes:
       m_pidSource:
     methods:

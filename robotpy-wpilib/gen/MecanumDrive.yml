@@ -7,7 +7,6 @@ extra_includes:
 classes:
   MecanumDrive:
     shared_ptr: true
-    subpackage: drive
     ignored_bases:
     - SendableHelper<MecanumDrive>
     methods:

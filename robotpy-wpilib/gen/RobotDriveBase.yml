@@ -6,7 +6,6 @@ extra_includes:
 classes:
   RobotDriveBase:
     shared_ptr: true
-    subpackage: drive
     attributes:
       m_deadband:
       m_maxOutput:

@@ -3,7 +3,6 @@
 classes:
   CounterBase:
     shared_ptr: true
-    subpackage: interfaces
     enums:
       EncodingType:
     methods:

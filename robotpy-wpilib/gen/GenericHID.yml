@@ -6,7 +6,8 @@ extra_includes:
 classes:
   GenericHID:
     shared_ptr: true
-    subpackage: interfaces
+    ignored_bases:
+    - ErrorBase
     enums:
       RumbleType:
       HIDType:

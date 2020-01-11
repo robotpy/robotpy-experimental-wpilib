@@ -3,7 +3,6 @@
 classes:
   PIDOutput:
     shared_ptr: true
-    subpackage: interfaces
     methods:
       PIDWrite:
         rename: pidWrite
