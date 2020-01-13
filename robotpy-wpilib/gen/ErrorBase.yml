@@ -2,6 +2,8 @@
 
 functions:
   HAL_GetErrorMessage:
+    # forward declared instead of including HAL
+    ignore: true
 classes:
   ErrorBase:
     shared_ptr: true
