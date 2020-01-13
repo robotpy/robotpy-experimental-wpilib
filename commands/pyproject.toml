@@ -20,7 +20,7 @@ libs = ["wpilibOldCommands"]
 # TODO: make this a namespace package?
 [tool.robotpy-build.wrappers."commands"]
 name = "commands"
-sources = ["commands/src/main.cpp"]
+sources = ["commands/src/commands.cpp"]
 depends = ["wpilibc", "wpiutil", "ntcore", "wpilib_core"]
 
 
