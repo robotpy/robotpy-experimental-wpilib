@@ -1,23 +1,28 @@
 [build-system]
-requires = ["robotpy-build", "robotpy-wpilib", "robotpy-wpiutil"]
+requires = [
+    "robotpy-build>=2020.0.0,<2021.0.0",
+    "robotpy-wpilib",
+    "robotpy-wpiutil>=2020.1.2.0,<2021.0.0",
+    "pyntcore"
+]
 
 [tool.robotpy-build]
 base_package = "commands"
 
-# TODO: make this a namespace package?
-[tool.robotpy-build.wrappers."commands._impl"]
-
-name = "commands"
-artname = "wpilibOldCommands-cpp"
-baseurl = "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibOldCommands"
+[tool.robotpy-build.wrappers."commands".maven_lib_download]
+artifact_id = "wpilibOldCommands-cpp"
+group_id = "edu.wpi.first.wpilibOldCommands"
+repo_url = "https://frcmaven.wpi.edu/artifactory/release"
 version = "2020.1.2"
 
-depends = ["wpilibc", "wpiutil"]
 libs = ["wpilibOldCommands"]
 
-sources = [
-    "commands/_impl/commands.cpp"
-]
+# TODO: make this a namespace package?
+[tool.robotpy-build.wrappers."commands"]
+name = "commands"
+sources = ["commands/src/commands.cpp"]
+depends = ["wpilibc", "wpiutil", "ntcore", "wpilib_core"]
+
 
 generate = [
     # frc/buttons
